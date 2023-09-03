@@ -10,7 +10,7 @@ vim hosts
 
 `group_vars` の認証情報を編集する。
 ```bash
-vim group_vars_auth/all.yml
+vim group_vars/all.yml
 ```
 
 `MySQL` のモジュールを入れる
