@@ -15,6 +15,16 @@
     group: tomcat
     mode: 0644
     backup: yes
+  notify: restart tomcat
+
+- name: Set CATALINA_OPTS sysconfig
+  ansible.builtin.lineinfile:
+    path: /etc/sysconfig/tomcat9
+    regexp: '^CATALINA_OPTS='
+    line: 'CATALINA_OPTS="-server -Xmx1024m -Xms512m -Xss512k"'
+    state: present
+    backup: yes
+  notify: restart tomcat
 
 - name: Enable and start tomcat
   ansible.builtin.service:
