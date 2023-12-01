@@ -46,4 +46,7 @@
     backup: yes
   notify: restart mysqld
 
+- name: flush
+  ansible.builtin.meta: flush_handlers
+
 - import_tasks: initialize_mysql.yml
